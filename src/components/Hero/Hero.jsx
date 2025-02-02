@@ -7,9 +7,10 @@ import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
   return (
     <section id="hero" className="h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800">
-      <div className="container mx-auto flex items-center justify-between px-8 lg:px-32">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-32">
+        
         {/* Section 1: Text Content */}
-        <div className="flex-1">
+        <div className="flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -33,7 +34,6 @@ const Hero = () => {
                   2000,
                   'Learning DevOps',
                   2000,
-                  
                 ]}
                 wrapper="span"
                 speed={50}
@@ -52,9 +52,8 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="flex space-x-4">
-              {/* Download Resume Button */}
               <motion.a
-                href="../../assets/Ebne_Masud_Resume.pdf"
+                href="https://drive.google.com/file/d/101Tn2L9XiOmRByALds790mQEW9b9Ze1S/view?usp=sharing"
                 download="Resume.pdf"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -65,7 +64,6 @@ const Hero = () => {
                 Download Resume
               </motion.a>
 
-              {/* Scroll Down Button */}
               <motion.a
                 href="#about"
                 initial={{ opacity: 0 }}
@@ -80,17 +78,18 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Section 2: Image */}
-        <div className="flex-wrap flex justify-center items-center">
+        {/* Section 2: Image with Alignment Adjustments */}
+        <div className="flex justify-center lg:justify-end items-center">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative"
           >
             <img
               src={profileImage}
               alt="Profile"
-              className="w-96 h-96 rounded-full object-cover border-8 border-gradient-to-r from-pink-400 to-blue-400 shadow-2xl transform hover:scale-105 transition-transform duration-300"
+              className="w-80 h-80 lg:w-[400px] lg:h-[400px] rounded-full object-cover border-8 border-gradient-to-r from-pink-400 to-blue-400 shadow-2xl transform hover:scale-105 transition-transform duration-300 lg:mr-[-100px]"
             />
           </motion.div>
         </div>
